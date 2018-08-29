@@ -7,7 +7,7 @@ describe('GuessGame Class', () => {
         const game = new GuessGame(46);
 
         expect(game.secretNumber).toEqual(46);
-        expect(game.remainingGuesses).toBe(6);
+        expect(game.remainingGuesses).toBe(5);
         expect(game.numbersGuessed).toEqual([]);
         expect(game.gameState).toEqual('playing');
     });
@@ -25,4 +25,6 @@ describe('GuessGame Class', () => {
             expect(game.hasOwnProperty('computeGameState')).toBe(false);
         });
     });
+
+    
 });

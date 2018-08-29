@@ -1,6 +1,8 @@
 class GuessGame {
-    constructor() {
-        this.secretNumber = undefined;
+    constructor(number) {
+        this.secretNumber = number || undefined;
+        this.numbersGuessed = []
+        this.remainingGuesses = 5
         this.gameState = 'playing';
     }
     submitGuess(guess) {}
