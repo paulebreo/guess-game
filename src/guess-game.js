@@ -8,7 +8,11 @@ class GuessGame {
       this.gameState = 'playing';
     }
     submitGuess(guess) {}
+    resetGame() {
+      
+    }
     computeGameState() {}
+
 }
 
 class Game {}

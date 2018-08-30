@@ -25,6 +25,13 @@ describe('GuessGame Class', () => {
         });
     });
 
+    describe('resetGame method', () => {
+        it('is a prototype method', () => {
+            const game = new GuessGame();
+            expect(game.hasOwnProperty('resetGame')).toBe(false);
+        });
+    });
+
     describe('computeGameState', () => {
         it('is a prototype method', () => {
             const game = new GuessGame();
