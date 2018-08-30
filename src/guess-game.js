@@ -1,9 +1,11 @@
+const getRandomInt = (min, max) =>  Math.floor(Math.random() * (Math.ceil(max) - Math.ceil(min))) + min
+
 class GuessGame {
     constructor(number) {
-        this.secretNumber = number || undefined;
-        this.numbersGuessed = []
-        this.remainingGuesses = 5
-        this.gameState = 'playing';
+      this.secretNumber = number || getRandomInt(1, 100);
+      this.numbersGuessed = [];
+      this.remainingGuesses = 5;
+      this.gameState = 'playing';
     }
     submitGuess(guess) {}
     computeGameState() {}
@@ -11,5 +13,5 @@ class GuessGame {
 
 class Game {}
 
-Game.prototype.setupGuessEvents();
-Game.prototype.start();
+// Game.prototype.setupGuessEvents();
+// Game.prototype.start();
