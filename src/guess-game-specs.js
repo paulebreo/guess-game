@@ -45,6 +45,7 @@ describe('GuessGame Class', () => {
             expect(game.gameState).toEqual('lost');
             expect(game.remainingGuesses).toBe(0);
             expect(game.numbersGuessed).toEqual([99, 93, 92, 91, 90]);
+
             game.resetGame()
             expect(game.gameState).toEqual('playing');
             expect(game.remainingGuesses).toBe(5);
@@ -57,6 +58,13 @@ describe('GuessGame Class', () => {
         it('is a prototype method', () => {
             const game = new GuessGame();
             expect(game.hasOwnProperty('computeGameState')).toBe(false);
+        });
+        it('should give a win game state when guessed correctly', () => {
+            const game = new GuessGame(10);
+            game.submitGuess(10)
+            expect(game.remainingGuesses).toBe(4);
+            expect(game.numbersGuessed).toEqual([10]);
+            expect(game.gameState).toEqual('won');
         });
     });
 
