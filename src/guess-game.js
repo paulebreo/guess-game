@@ -29,6 +29,14 @@ class GuessGame {
             this.gameState = 'playing'
         }
     }
+    computeGameMessage() {
+      if (this.gameState === 'playing') {
+        if (this.numbersGuessed[this.numbersGuessed.length - 1] > this.secretNumber) { 
+          return 'tooHigh'
+        }
+        return 'tooLow'
+      }
+    }
 }
 
 class Game {}

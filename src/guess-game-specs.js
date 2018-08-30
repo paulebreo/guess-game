@@ -73,6 +73,19 @@ describe('GuessGame Class', () => {
             const game = new GuessGame();
             expect(game.hasOwnProperty('computeGameMessage')).toBe(false);
         });
+        it('should give a tooHigh message', () => {
+            const game = new GuessGame(5);
+            game.submitGuess(8)
+            const message = game.computeGameMessage()
+            expect(message).toBe('tooHigh');
+
+        });
+        it('should give a tooLow message', () => {
+            const game = new GuessGame(5);
+            game.submitGuess(2)
+            const message = game.computeGameMessage()
+            expect(message).toBe('tooLow');
+        });
     });
 
     
