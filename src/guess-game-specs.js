@@ -28,6 +28,7 @@ describe('GuessGame Class', () => {
             game.submitGuess(99)
             expect(game.numbersGuessed).toEqual([99]);
         });
+
     });
 
     describe('resetGame method', () => {
@@ -85,6 +86,18 @@ describe('GuessGame Class', () => {
             game.submitGuess(2)
             const message = game.computeGameMessage()
             expect(message).toBe('tooLow');
+        });
+        it('should give a guessedAlready message', () => {
+            const game = new GuessGame(5);
+            game.submitGuess(2)
+            const message = game.computeGameMessage()
+            expect(message).toBe('guessedAlready');
+        });
+        it('should give a invalidGuess message', () => {
+            const game = new GuessGame(5);
+            game.submitGuess(2)
+            const message = game.computeGameMessage()
+            expect(message).toBe('invalidGuess');
         });
     });
 
